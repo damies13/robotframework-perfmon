@@ -4,7 +4,7 @@ Robot Framework wrapper for pyperfmon, provides a simple way to collect windows 
 
 Simple example usage:
 ```robotframework
-*** Setup ***
+*** Settings ***
 Library		PerfmonLibrary
 
 *** Variables ***
