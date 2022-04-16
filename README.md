@@ -8,16 +8,16 @@ Simple example usage:
 Library		PerfmonLibrary
 
 *** Variables ***
-${AUTServer}		MyAUTServer
+${AUTServer} 	MyAUTServer
 
 *** Test Cases ***
 Check Memory
-	${mempct}=		Get Counter		Memory\\% Committed Bytes In Use		${AUTServer}
-	Should Be True		${mempct} < 80
+	${mempct}= 	Get Counter 	Memory\\% Committed Bytes In Use 	${AUTServer}
+	Should Be True 	${mempct} < 80
 
 Check CPU
-	${cputotpct}=		Get Counter		Processor\\_Total\\% Processor Time		${AUTServer}
-	Should Be True		${cputotpct} < 80
+	${cputotpct}= 	Get Counter 	Processor\\_Total\\% Processor Time 	${AUTServer}
+	Should Be True 	${cputotpct} < 80
 
 ```
 
