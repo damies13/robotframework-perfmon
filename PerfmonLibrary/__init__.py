@@ -24,43 +24,43 @@ class PerfmonLibrary:
 			raise AssertionError(emsg)
 
 	@keyword('Get Counter')
-	def get_counter(self, counterpath=None, machinealias="localhost"):
+	def get_counter(self, counterpath=None, hostname="localhost"):
 		try:
-			ctr = self.pm.getCounter(counterpath, machinealias)
+			ctr = self.pm.getCounter(counterpath, hostname)
 			if ctr[1] == 'ERR: Not Found.':
-				raise AssertionError("Counter {} was not found on host {}".format(counterpath, machinealias))
+				raise AssertionError("Counter {} was not found on host {}".format(counterpath, hostname))
 			return ctr
 		except AssertionError as e:
 			raise AssertionError(e)
 		except Exception as e:
 			print(e)
-			emsg = "Unable to connect to host {}".format(machinealias)
+			emsg = "Unable to connect to host {}".format(hostname)
 			raise AssertionError(emsg)
 
 	@keyword('Get Objects')
-	def get_objects(self, machinealias="localhost"):
+	def get_objects(self, hostname="localhost"):
 		try:
-			objs = self.pm.getCounterObjects(machinealias)
+			objs = self.pm.getCounterObjects(hostname)
 			if len(objs) <1:
-				raise AssertionError("No Objects found on host {}".format(machinealias))
+				raise AssertionError("No Objects found on host {}".format(hostname))
 			return objs
 		except AssertionError as e:
 			raise AssertionError(e)
 		except Exception as e:
 			print(e)
-			emsg = "Unable to connect to host {}".format(machinealias)
+			emsg = "Unable to connect to host {}".format(hostname)
 			raise AssertionError(emsg)
 
 	@keyword('Get Counters')
-	def get_counters(self, objectname=None, machinealias="localhost"):
+	def get_counters(self, objectname=None, hostname="localhost"):
 		try:
-			ctrs = self.pm.getCounters(objectname, machinealias)
+			ctrs = self.pm.getCounters(objectname, hostname)
 			if len(ctrs) <1:
-				raise AssertionError("No Counters found for Object {} on host {}".format(objectname, machinealias))
+				raise AssertionError("No Counters found for Object {} on host {}".format(objectname, hostname))
 			return ctrs
 		except AssertionError as e:
 			raise AssertionError(e)
 		except Exception as e:
 			print(e)
-			emsg = "Unable to connect to host {}".format(machinealias)
+			emsg = "Unable to connect to host {}".format(hostname)
 			raise AssertionError(emsg)
