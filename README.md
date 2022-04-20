@@ -1,5 +1,14 @@
 # robotframework-perfmon
 
+.. image:: https://img.shields.io/pypi/v/robotframework-perfmon.svg
+    :target: https://pypi.python.org/pypi/robotframework-perfmon/
+    :alt: Latest PyPI version
+
+.. image:: https://img.shields.io/pypi/dm/robotframework-perfmon.svg
+    :target: https://pypi.python.org/pypi/robotframework-perfmon/
+    :alt: Number of PyPI downloads
+
+
 Robot Framework wrapper for pyperfmon, provides a simple way to collect windows performance monitor (perfmon) counter statistics from a windows machine, usually the AUT servers.
 
 - [Installation](#installation)
